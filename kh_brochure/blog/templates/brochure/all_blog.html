@@ -1,0 +1,17 @@
+{% extends 'brochure/base.html' %}
+{% load static %}
+
+{% block body %}
+{% if latest_blog_list %}
+    {% for  blog in latest_blog_list  %}
+    <h1><a href="{% url 'blog:detail' blog.id %}">{{ blog.title }}</a></h1>
+    <p>{{blog.description}}</p>
+    <p>{{blog.author}}</p>
+    <p>{{blog.pub_date}}</p>
+
+    <img src="{{ blog.blog_image.url }}" width="200px" height="200px" alt="blog image">
+    {% endfor %}
+{% else %}
+<p>No blog available check back again</p>
+{% endif %}
+{% endblock %}

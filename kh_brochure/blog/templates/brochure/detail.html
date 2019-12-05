@@ -1,0 +1,5 @@
+{% load static %}
+<img src="{{blog.blog_image.url}}" width="300px" height="300px" alt="blog image">
+<h1>{{blog.title}}</h1>
+<h1>{{blog.content}}</h1>
+{% if error_message %} <p><strong>{{error_message}}</strong></p>{% endif %}
